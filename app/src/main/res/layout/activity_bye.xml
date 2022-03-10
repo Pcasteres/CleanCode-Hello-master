@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="@string/bye_message"
+        android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,11 +45,9 @@
             android:id="@+id/sayByeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/say_bye_button_label"
-            tools:ignore="DuplicateSpeakableTextCheck"
+            android:text="Button"
             tools:layout_editor_absoluteX="187dp"
-            tools:layout_editor_absoluteY="168dp"
-            style="?android:attr/buttonBarButtonStyle" />
+            tools:layout_editor_absoluteY="168dp" />
 
         <Button
             android:id="@+id/goHelloButton"
@@ -59,7 +57,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/sayByeButton"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.334"
-            style="?android:attr/buttonBarButtonStyle" />
+            app:layout_constraintVertical_bias="0.334" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
