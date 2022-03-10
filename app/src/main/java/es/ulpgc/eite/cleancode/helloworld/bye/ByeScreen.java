@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentActivity;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.eite.cleancode.helloworld.R;
+import es.ulpgc.eite.cleancode.helloworld.app.AppMediator;
 
 public class ByeScreen {
 
@@ -13,7 +14,7 @@ public class ByeScreen {
         WeakReference<FragmentActivity> context =
                 new WeakReference<>((FragmentActivity) view);
 
-        String data = context.get().getString(R.string.app_name);
+        String data = context.get().getString(R.string.bye_message);
 
         AppMediator mediator = AppMediator.getInstance();
 

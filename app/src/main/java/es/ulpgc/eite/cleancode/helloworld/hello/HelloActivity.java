@@ -1,5 +1,6 @@
 package es.ulpgc.eite.cleancode.helloworld.hello;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import es.ulpgc.eite.cleancode.helloworld.R;
+import es.ulpgc.eite.cleancode.helloworld.bye.ByeActivity;
 
 
 public class HelloActivity
@@ -64,6 +66,14 @@ public class HelloActivity
 
     // deal with the data
     helloMessage.setText(viewModel.helloMessage);
+  }
+
+  //TODO
+  @Override
+  public void navigateToByeScreen() {
+    Intent intent = new Intent(this, ByeActivity.class);
+    intent.putExtra(ByeActivity.)
+
   }
 
 

@@ -66,8 +66,10 @@ public class HelloPresenter implements HelloContract.Presenter {
 
     HelloToByeState newState = new HelloToByeState(state.helloMessage);
     passDataToByeScreen(newState);
-    navigateToByeScreen();
+    view.get().navigateToByeScreen();
   }
+
+
 
   private ByeToHelloState getDataFromByeScreen() {
     return mediator.getByeToHelloState();
@@ -75,12 +77,9 @@ public class HelloPresenter implements HelloContract.Presenter {
 
   private void passDataToByeScreen(HelloToByeState state) {
     //TODO: no implemented
-  }
-
-  private void navigateToByeScreen() {
-    //TODO: no implemented
 
   }
+
 
   @Override
   public void injectView(WeakReference<HelloContract.View> view) {

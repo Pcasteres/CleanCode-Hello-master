@@ -3,6 +3,8 @@ package es.ulpgc.eite.cleancode.helloworld.bye;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.eite.cleancode.helloworld.app.AppMediator;
+import es.ulpgc.eite.cleancode.helloworld.app.ByeToHelloState;
+import es.ulpgc.eite.cleancode.helloworld.app.HelloToByeState;
 
 public class ByePresenter implements ByeContract.Presenter {
 
@@ -19,63 +21,37 @@ public class ByePresenter implements ByeContract.Presenter {
     }
 
     @Override
-    public void onStart() {
-        // Log.e(TAG, "onStart()");
-
-        // initialize the state
-        state = new ByeState();
-
-        // call the model and update the state
-        state.data = model.getStoredData();
-
-        // use passed state if is necessary
-        PreviousToByeState savedState = getStateFromPreviousScreen();
-        if (savedState != null) {
-
-            // update the model if is necessary
-            model.onDataFromPreviousScreen(savedState.data);
-
-            // update the state if is necessary
-            state.data = savedState.data;
-        }
-    }
-
-    @Override
-    public void onRestart() {
-        // Log.e(TAG, "onRestart()");
-
-        // update the model if is necessary
-        model.onRestartScreen(state.data);
-    }
-
-    @Override
-    public void onResume() {
+    public void onResumeCalled() {
         // Log.e(TAG, "onResume()");
 
         // use passed state if is necessary
-        NextToByeState savedState = getStateFromNextScreen();
+        HelloToByeState savedState = getStateFromNextScreen();
         if (savedState != null) {
 
             // update the model if is necessary
-            model.onDataFromNextScreen(savedState.data);
+           // model.onDataFromNextScreen(savedState.data);
 
             // update the state if is necessary
-            state.data = savedState.data;
+            state.byeMessage = savedState.message;
         }
 
         // call the model and update the state
         //state.data = model.getStoredData();
 
         // update the view
-        view.get().onDataUpdated(state);
+        view.get().displayByeData(state);
 
+    }
+    private void startByeMessageAsyncTask() {
+        state.byeMessage = model.getByeMessage();
+        view.get().displayByeData(state);
     }
 
     @Override
     public void onBackPressed() {
         // Log.e(TAG, "onBackPressed()");
     }
-
+/*
     @Override
     public void onPause() {
         // Log.e(TAG, "onPause()");
@@ -84,13 +60,13 @@ public class ByePresenter implements ByeContract.Presenter {
     @Override
     public void onDestroy() {
         // Log.e(TAG, "onDestroy()");
+    }*/
+
+    private HelloToByeState getStateFromNextScreen() {
+        return mediator.getHelloToByeState();
     }
 
-    /*private NextToByeState getStateFromNextScreen() {
-        return mediator.getNextByeScreenState();
-    }
-
-    private void passStateToNextScreen(ByeToNextState state) {
+    /*private void passStateToNextScreen(ByeToNextState state) {
         mediator.setNextByeScreenState(state);
     }
 
@@ -105,7 +81,27 @@ public class ByePresenter implements ByeContract.Presenter {
     //TODO
     @Override
     public void sayByeButtonClicked() {
+        state.byeMessage = "?";
+        view.get().displayByeData(state);
+        startByeMessageAsyncTask();
+    }
 
+    //TODO
+
+    @Override
+    public void goHelloButtonClicked() {
+        ByeToHelloState newState = new ByeToHelloState(state.byeMessage);
+        passDataToHelloScreen(newState);
+        navigateToHelloScreen();
+
+    }
+    //TODO
+    private void navigateToHelloScreen() {
+
+    }
+
+    //TODO
+    private void passDataToHelloScreen(ByeToHelloState newState) {
     }
 
     @Override

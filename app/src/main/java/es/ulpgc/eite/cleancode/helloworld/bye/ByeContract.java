@@ -16,31 +16,25 @@ public interface ByeContract {
 
         void injectModel(Model model);
 
-        void onResume();
+        void onResumeCalled();
 
-        void onStart();
+        //void onStart();
 
-        void onRestart();
+        //void onRestart();
 
         void onBackPressed();
 
-        void onPause();
+        //void onPause();
 
-        void onDestroy();
+        //void onDestroy();
 
         void sayByeButtonClicked();
 
-
+        void goHelloButtonClicked();
     }
 
     interface Model {
-        String getStoredData();
-
-        void onDataFromNextScreen(String data);
-
-        void onRestartScreen(String data);
-
-        void onDataFromPreviousScreen(String data);
+        String getByeMessage();
     }
 
 }

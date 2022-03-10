@@ -11,11 +11,11 @@ public class ByeModel implements ByeContract.Model {
     }
 
     @Override
-    public String getStoredData() {
+    public String getByeMessage() {
         // Log.e(TAG, "getStoredData()");
         return data;
     }
-
+/*
     @Override
     public void onRestartScreen(String data) {
         // Log.e(TAG, "onRestartScreen()");
@@ -24,10 +24,11 @@ public class ByeModel implements ByeContract.Model {
     @Override
     public void onDataFromNextScreen(String data) {
         // Log.e(TAG, "onDataFromNextScreen()");
+
     }
 
     @Override
     public void onDataFromPreviousScreen(String data) {
         // Log.e(TAG, "onDataFromPreviousScreen()");
-    }
+    }*/
 }
