@@ -2,8 +2,6 @@ package es.ulpgc.eite.cleancode.helloworld.bye;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.eite.cleancode.helloworld.hello.HelloViewModel;
-
 public interface ByeContract {
 
     interface View {
@@ -29,6 +27,10 @@ public interface ByeContract {
         void onPause();
 
         void onDestroy();
+
+        void sayByeButtonClicked();
+
+
     }
 
     interface Model {

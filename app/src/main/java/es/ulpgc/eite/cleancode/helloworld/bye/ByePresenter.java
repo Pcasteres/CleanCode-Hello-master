@@ -2,6 +2,8 @@ package es.ulpgc.eite.cleancode.helloworld.bye;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.eite.cleancode.helloworld.app.AppMediator;
+
 public class ByePresenter implements ByeContract.Presenter {
 
     public static String TAG = ByePresenter.class.getSimpleName();
@@ -84,7 +86,7 @@ public class ByePresenter implements ByeContract.Presenter {
         // Log.e(TAG, "onDestroy()");
     }
 
-    private NextToByeState getStateFromNextScreen() {
+    /*private NextToByeState getStateFromNextScreen() {
         return mediator.getNextByeScreenState();
     }
 
@@ -98,6 +100,12 @@ public class ByePresenter implements ByeContract.Presenter {
 
     private PreviousToByeState getStateFromPreviousScreen() {
         return mediator.getPreviousByeScreenState();
+    }*/
+
+    //TODO
+    @Override
+    public void sayByeButtonClicked() {
+
     }
 
     @Override
