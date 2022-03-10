@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="TextView"
+        android:text="@string/hello_message"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,8 +46,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Button"
+            tools:ignore="DuplicateSpeakableTextCheck"
             tools:layout_editor_absoluteX="187dp"
-            tools:layout_editor_absoluteY="168dp" />
+            tools:layout_editor_absoluteY="168dp"
+            style="?android:attr/buttonBarButtonStyle" />
 
         <Button
             android:id="@+id/goByeButton"

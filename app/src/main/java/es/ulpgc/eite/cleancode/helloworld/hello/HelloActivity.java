@@ -69,6 +69,7 @@ public class HelloActivity
 
   private String getGoByeButtonLabel() {
     return getResources().getString(R.string.go_bye_button_label);
+
   }
 
   private String getSayHelloButtonLabel() {
