@@ -41,8 +41,9 @@ public class HelloPresenter implements HelloContract.Presenter {
 
   private void startHelloMessageAsyncTask() {
     //Log.e(TAG, "startHelloMessageAsyncTask()");
+    String message = model.getHelloMessage();
+    state.helloMessage = message;
 
-    state.helloMessage = model.getHelloMessage();
 
     view.get().displayHelloData(state);
   }
@@ -68,14 +69,11 @@ public class HelloPresenter implements HelloContract.Presenter {
     view.get().navigateToByeScreen();
   }
 
-
-
   private ByeToHelloState getDataFromByeScreen() {
     return mediator.getByeToHelloState();
   }
 
   private void passDataToByeScreen(HelloToByeState state) {
-    //TODO: no implemented
     mediator.setHelloToByeState(state);
 
   }

@@ -95,13 +95,16 @@ public class ByePresenter implements ByeContract.Presenter {
         navigateToHelloScreen();
 
     }
+
     //TODO
     private void navigateToHelloScreen() {
+
 
     }
 
     //TODO
     private void passDataToHelloScreen(ByeToHelloState newState) {
+        mediator.setByeToHelloState(newState);
     }
 
     @Override

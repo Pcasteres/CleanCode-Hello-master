@@ -63,7 +63,6 @@ public class HelloActivity
   @Override
   public void displayHelloData(HelloViewModel viewModel) {
     Log.e(TAG, "displayHelloData()");
-
     // deal with the data
     helloMessage.setText(viewModel.helloMessage);
   }
@@ -71,7 +70,10 @@ public class HelloActivity
   //TODO
   @Override
   public void navigateToByeScreen() {
+    Log.e(TAG, "navigate");
     Intent intent = new Intent(this, ByeActivity.class);
+    //aquí se haría de esta manera?
+    // intent.putExtra(...);
     startActivity(intent);
   }
 

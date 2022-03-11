@@ -8,7 +8,6 @@ public interface ByeContract {
         void injectPresenter(Presenter presenter);
         void displayByeData(ByeViewModel viewModel);
 
-        void navigateToNextScreen();
     }
 
     interface Presenter {
