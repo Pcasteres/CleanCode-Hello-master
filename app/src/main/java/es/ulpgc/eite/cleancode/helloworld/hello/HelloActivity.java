@@ -72,8 +72,6 @@ public class HelloActivity
   @Override
   public void navigateToByeScreen() {
     Intent intent = new Intent(this, ByeActivity.class);
-    //intent.putExtra(ByeActivity.SAY_BYE, helloMessage.toString());
-    //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     startActivity(intent);
   }
 

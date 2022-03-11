@@ -63,7 +63,6 @@ public class HelloPresenter implements HelloContract.Presenter {
   @Override
   public void goByeButtonClicked() {
     Log.e(TAG, "goByeButtonClicked()");
-
     HelloToByeState newState = new HelloToByeState(state.helloMessage);
     passDataToByeScreen(newState);
     view.get().navigateToByeScreen();
@@ -77,6 +76,7 @@ public class HelloPresenter implements HelloContract.Presenter {
 
   private void passDataToByeScreen(HelloToByeState state) {
     //TODO: no implemented
+    mediator.setHelloToByeState(state);
 
   }
 
