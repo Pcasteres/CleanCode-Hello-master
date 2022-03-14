@@ -40,7 +40,10 @@ public class ByePresenter implements ByeContract.Presenter {
 
         // update the view
         view.get().displayByeData(state);
+    }
 
+    private HelloToByeState getStateFromNextScreen() {
+        return mediator.getHelloToByeState();
     }
     private void startByeMessageAsyncTask() {
         String data = model.getByeMessage();
@@ -63,9 +66,7 @@ public class ByePresenter implements ByeContract.Presenter {
         // Log.e(TAG, "onDestroy()");
     }*/
 
-    private HelloToByeState getStateFromNextScreen() {
-        return mediator.getHelloToByeState();
-    }
+
 
     /*private void passStateToNextScreen(ByeToHelloState state) {
         mediator.setNextByeScreenState(state);
@@ -93,15 +94,17 @@ public class ByePresenter implements ByeContract.Presenter {
     public void goHelloButtonClicked() {
         ByeToHelloState newState = new ByeToHelloState(state.byeMessage);
         passDataToHelloScreen(newState);
-        navigateToHelloScreen();
+        //se le dice a la activity que se acabe
+        view.get().finishView();
+       // navigateToHelloScreen();
 
     }
 
-    //TODO
-    private void navigateToHelloScreen() {
+   /* TODO
+   private void navigateToHelloScreen() {
 
 
-    }
+    }*/
 
     //TODO
     private void passDataToHelloScreen(ByeToHelloState newState) {

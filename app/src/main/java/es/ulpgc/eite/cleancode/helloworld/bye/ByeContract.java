@@ -8,6 +8,7 @@ public interface ByeContract {
         void injectPresenter(Presenter presenter);
         void displayByeData(ByeViewModel viewModel);
 
+        void finishView();
     }
 
     interface Presenter {
