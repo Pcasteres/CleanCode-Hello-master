@@ -43,7 +43,8 @@ public class ByePresenter implements ByeContract.Presenter {
 
     }
     private void startByeMessageAsyncTask() {
-        state.byeMessage = model.getByeMessage();
+        String data = model.getByeMessage();
+        state.byeMessage = data;
         view.get().displayByeData(state);
     }
 
@@ -66,7 +67,7 @@ public class ByePresenter implements ByeContract.Presenter {
         return mediator.getHelloToByeState();
     }
 
-    /*private void passStateToNextScreen(ByeToNextState state) {
+    /*private void passStateToNextScreen(ByeToHelloState state) {
         mediator.setNextByeScreenState(state);
     }
 

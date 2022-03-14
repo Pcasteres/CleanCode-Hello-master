@@ -53,7 +53,6 @@ public class HelloPresenter implements HelloContract.Presenter {
     Log.e(TAG, "sayHelloButtonClicked()");
 
     state.helloMessage = "?";
-
     view.get().displayHelloData(state);
 
     // call the model
